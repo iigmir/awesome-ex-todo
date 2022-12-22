@@ -27,7 +27,7 @@ export class MainApp extends Component {
     render() {
         return (<View style={ styles.container } className="the-container">
             <Text>Open up App.js to start working on your app!</Text>
-            <TheForm submit={ () => this.submitted() } />
+            <TheForm submit={ (input) => this.submitted(input) } />
         </View>);
     }
 };
