@@ -24,10 +24,14 @@ const TheList = (props = { list: [] }) => {
 };
 
 export const MainApp = () => {
-    const [list] = React.useState([]);
-    // { title: "", id: 0 }
+    const [list, set_list] = React.useState([]);
     const submitted = (title) => {
-        list.push({ title: title, id: list.length });
+        const new_item = {
+            title: title,
+            id: list.length
+        };
+        const push_list = old_array => [...old_array, new_item];
+        set_list(push_list);
     };
     return (<View style={ styles.container } className="the-container">
         <Text>Open up App.js to start working on your app!</Text>
