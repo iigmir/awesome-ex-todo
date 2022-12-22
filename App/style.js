@@ -25,5 +25,9 @@ export const styles = StyleSheet.create({
     remove: {
         backgroundColor: "rgba(127,127,127,0.5)",
         fontSize: 16,
+    },
+    form: {
+        // flex: 1,
+        flexDirection: "row",
     }
 });
