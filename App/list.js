@@ -3,7 +3,10 @@ import { Text, View, SafeAreaView, FlatList } from "react-native";
 import { styles } from "./style.js";
 
 export const Item = ({ title }) => (<View style={styles.item}>
-    <Text style={styles.title}>{title}</Text>
+    <Text style={styles.title}>
+        <Text style={styles.remove}>(X)</Text>
+        {title}
+    </Text>
 </View>);
 
 export const TheList = (props = { list: [] }) => {

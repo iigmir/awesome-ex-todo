@@ -22,4 +22,8 @@ export const styles = StyleSheet.create({
     title: {
         fontSize: 32,
     },
+    remove: {
+        backgroundColor: "rgba(127,127,127,0.5)",
+        fontSize: 16,
+    }
 });
