@@ -2,7 +2,7 @@ import React from "react";
 import { Text, View, SafeAreaView, TextInput, Button, FlatList } from "react-native";
 import { styles } from "./style.js";
 
-const TheForm = (props = { submit: () => {} }) => {
+export const TheForm = (props = { submit: () => {} }) => {
     const [text, onChangeText] = React.useState("Add todo...");
     const submit = () => props.submit(text);
     return (<SafeAreaView>
@@ -11,11 +11,11 @@ const TheForm = (props = { submit: () => {} }) => {
     </SafeAreaView>);
 };
 
-const Item = ({ title }) => (<View style={styles.item}>
+export const Item = ({ title }) => (<View style={styles.item}>
     <Text style={styles.title}>{title}</Text>
 </View>);
 
-const TheList = (props = { list: [] }) => {
+export const TheList = (props = { list: [] }) => {
     const renderItem = ({ item }) => (<Item title={item.title} />);
     const keyExtractor = item => item.id;
     return (<SafeAreaView>
@@ -33,7 +33,7 @@ export const MainApp = () => {
         const push_list = old_array => [...old_array, new_item];
         set_list(push_list);
     };
-    return (<View style={ styles.container } className="the-container">
+    return (<View style={ styles.container }>
         <Text>Open up App.js to start working on your app!</Text>
         <TheForm submit={ submitted } />
         <TheList list={ list } />
