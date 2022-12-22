@@ -1,16 +1,8 @@
 import React from "react";
-import { Text, View, SafeAreaView, TextInput, Button } from "react-native";
+import { Text, View } from "react-native";
 import { styles } from "./style.js";
 import { TheList } from "./list.js";
-
-export const TheForm = (props = { submit: () => {} }) => {
-    const [text, onChangeText] = React.useState("Add todo...");
-    const submit = () => props.submit(text);
-    return (<SafeAreaView>
-        <TextInput style={styles.input} onChangeText={onChangeText} value={text} />
-        <Button title="Press me" color="#f194ff" onPress={ submit } />
-    </SafeAreaView>);
-};
+import { TheForm } from "./form.js";
 
 export const MainApp = () => {
     const [list, set_list] = React.useState([]);
