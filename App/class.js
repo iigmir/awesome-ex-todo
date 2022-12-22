@@ -11,7 +11,7 @@ export class MainApp extends React.Component {
             list: []
         };
     }
-    submitted() {
+    submitted(title = "") {
         const list = this.state.list;
         const get_id = (list = []) => {
             if( list.length < 1 ) {
@@ -34,8 +34,8 @@ export class MainApp extends React.Component {
     }
     render() {
         return (<View style={ styles.container }>
-            <TheForm submit={ () => this.submitted } />
-            <TheList list={ () => this.state.list } remove={ () => this.remove_by_id } />
+            <TheForm submit={ (title) => this.submitted(title) } />
+            <TheList list={ this.state.list } remove={ (id) => this.remove_by_id(id) } />
         </View>);
     }
 }
