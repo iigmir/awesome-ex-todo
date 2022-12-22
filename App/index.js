@@ -21,9 +21,13 @@ export const MainApp = () => {
         const push_list = old_array => [...old_array, new_item];
         set_list(push_list);
     };
+    const remove_by_id = (id = 0) => {
+        const filter_list = old_list => old_list.filter( (item) => item.id !== id );
+        set_list(filter_list);
+    };
     return (<View style={ styles.container }>
         <Text>Open up App.js to start working on your app!</Text>
         <TheForm submit={ submitted } />
-        <TheList list={ list } />
+        <TheList list={ list } remove={ remove_by_id } />
     </View>);
 };
