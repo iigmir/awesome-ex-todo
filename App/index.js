@@ -26,9 +26,16 @@ export const TheList = (props = { list: [] }) => {
 export const MainApp = () => {
     const [list, set_list] = React.useState([]);
     const submitted = (title) => {
+        const get_id = (list = []) => {
+            if( list.length < 1 ) {
+                return 0;
+            }
+            const index = list.length - 1;
+            return list[index].id + 1;
+        };
         const new_item = {
             title: title,
-            id: list.length
+            id: get_id(list)
         };
         const push_list = old_array => [...old_array, new_item];
         set_list(push_list);
