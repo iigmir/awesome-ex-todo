@@ -14,20 +14,14 @@ const TheForm = (props = {
     </SafeAreaView>);
 };
 
-export class MainApp extends Component {
-    constructor() {
-        super();
-        this.state = {
-            list: [],
-        };
-    }
-    submitted(input) {
-        console.log(input);
-    }
-    render() {
-        return (<View style={ styles.container } className="the-container">
-            <Text>Open up App.js to start working on your app!</Text>
-            <TheForm submit={ (input) => this.submitted(input) } />
-        </View>);
-    }
+export const MainApp = () => {
+    const [list] = React.useState([]);
+    const submitted = (input) => {
+        list.push(input);
+        console.log(list);
+    };
+    return (<View style={ styles.container } className="the-container">
+        <Text>Open up App.js to start working on your app!</Text>
+        <TheForm submit={ submitted } />
+    </View>);
 };
