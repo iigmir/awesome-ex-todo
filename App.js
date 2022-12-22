@@ -1,3 +1,3 @@
-import { MainApp } from "./App/index.js";
+import { MainApp } from "./App/class.js";
 
 export default function App() { return (<MainApp />); }
