@@ -11,10 +11,11 @@ const TheForm = (props = { submit: () => {} }) => {
     </SafeAreaView>);
 };
 
+const Item = ({ title }) => (<View style={styles.item}>
+    <Text style={styles.title}>{title}</Text>
+</View>);
+
 const TheList = (props = { list: [] }) => {
-    const Item = ({ title }) => (<View style={styles.item}>
-        <Text style={styles.title}>{title}</Text>
-    </View>);
     const renderItem = ({ item }) => (<Item title={item.title} />);
     const keyExtractor = item => item.id;
     return (<SafeAreaView>
@@ -24,8 +25,9 @@ const TheList = (props = { list: [] }) => {
 
 export const MainApp = () => {
     const [list] = React.useState([]);
-    const submitted = (input) => {
-        list.push(input);
+    // { title: "", id: 0 }
+    const submitted = (title) => {
+        list.push({ title: title, id: list.length });
     };
     return (<View style={ styles.container } className="the-container">
         <Text>Open up App.js to start working on your app!</Text>
