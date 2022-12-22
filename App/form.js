@@ -7,6 +7,6 @@ export const TheForm = (props = { submit: () => {} }) => {
     const submit = () => props.submit(text);
     return (<View style={styles.form}>
         <TextInput style={styles.input} onChangeText={onChangeText} value={text} />
-        <Button title="Create item" color="#f194ff" onPress={ submit } />
+        <Button title="Create item" onPress={ submit } />
     </View>);
 };
